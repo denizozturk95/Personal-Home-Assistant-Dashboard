@@ -1,16 +1,18 @@
-#!/usr/bin/env python3
-"""Placeholder — replace with the real SwitchBot press script.
-
-The dashboard invokes this with `python3 switchbot_press.py`. Exit 0 = success;
-non-zero exit or stderr output surfaces as a failure in the UI.
-"""
-from __future__ import annotations
-
+import asyncio
 import sys
+from bleak import BleakClient
 
+bot = "E6:55:84:06:3E:96" # mac addresss
+
+async def press():
+  async with BleakClient(bot) as client:
+    await client.write_gatt_char(
+        "cba20002-224d-11e6-9fb8-0002a5d5c51b",
+        bytearray([0x57, 0x01, 0x00])
+    )
 
 def main() -> int:
-    print("switchbot_press: placeholder invocation — replace this file with your real script")
+    asyncio.run(press())
     return 0
 
 

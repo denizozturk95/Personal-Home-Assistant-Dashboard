@@ -46,7 +46,8 @@ sudo cp "$REPO_DIR/deploy/nginx.conf" /etc/nginx/sites-available/dashboard
 sudo ln -sf /etc/nginx/sites-available/dashboard /etc/nginx/sites-enabled/dashboard
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t
-sudo systemctl reload nginx
+sudo systemctl enable nginx
+sudo systemctl reload-or-restart nginx
 
 echo "==> Done. Visit https://dashboard.local on your iPhone."
 echo "    The first visit will warn about the self-signed cert — accept it once."
