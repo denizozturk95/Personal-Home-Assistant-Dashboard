@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+backend/.env
+frontend/icons/*.png
+.dashboard/

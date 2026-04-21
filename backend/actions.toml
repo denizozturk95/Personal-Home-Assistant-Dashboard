@@ -1,0 +1,9 @@
+# Each [[action]] block registers one button in the dashboard.
+# `script` is resolved relative to backend/scripts/ — absolute paths are rejected.
+
+[[action]]
+id = "switchbot_press"
+label = "Press SwitchBot"
+script = "switchbot_press.py"
+icon = "toggle"
+timeout_s = 15
